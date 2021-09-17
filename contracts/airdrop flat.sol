@@ -412,13 +412,13 @@ contract airDropper is Ownable, ERC1155Holder {
         currentToken.balanceOf(_address, tokenId);
     }
     
-    function drop(address[] memory dropAddresses) external onlyOwner() {
+    function drop(address[] memory dropAddresses, uint dropId) external onlyOwner() {
         // limit drops to 100
         require(dropAddresses.length < 101, "Dropping to too many addresses");
     
         for(uint256 i; i < dropAddresses.length; i++){
-        address to = dropAddresses[i];
-        currentToken.safeTransferFrom(address(this), to, tokenId, 1, "");
+        address _to = dropAddresses[i];
+        currentToken.safeTransferFrom(address(this), _to, dropId, 1, "");
         }
     }
 } 

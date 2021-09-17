@@ -1,3 +1,6 @@
+/* Again, HUGE thanks to xtremetom in the creation of this address fetcher 
+https://gist.github.com/CoolCatsNFTPublic/c59ad54b6faf349dd38a3c15e2d14088#file-getallholders-js */
+
 import Web3 from 'web3';
 import {INFURA_ADDRESS, ADDRESS, ABI} from "./config.js";
 import fs from 'fs';
@@ -14,26 +17,15 @@ const totalSupply = await lambContract.methods.totalSupply().call();
 
 // Step 2 - Iterate over live tokens and log owners
 let holder = {};
-for(let i = 0; i < 10; i++){
+for(let i = 0; i < 500; i++){
+  console.log(i);
   const ownerAddress = await lambContract.methods.ownerOf(i).call();
   const ownerTokens = await lambContract.methods.balanceOf(ownerAddress).call();
-  
+
   if(!holder[ownerAddress]){ 
-    //console.log(holder[ownerAddress]);
     holder[ownerAddress] = ownerTokens; 
     
-  } else {
-    holder[ownerAddress]++;
-    console.log(holder[ownerAddress]);
-  }
-
-  /*if (holder[ownerAddress]){
-    Array.push(ownerAddress){
-      key: ownerTokens;
-    }
-  } else {
-    
-  }*/
+  } 
 }
 
 // Step 3 - Saving the snapshot
