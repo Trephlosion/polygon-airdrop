@@ -1,6 +1,6 @@
 import Web3 from 'web3';
-import {INFURA_ADDRESS, ADDRESS, ABI} from "/config.js";
-var fs = require('fs');
+import {INFURA_ADDRESS, ADDRESS, ABI} from "./config.js";
+import fs from 'fs';
 
 /*--------------------SMART CONTRACT STUFF--------------------*/
 const provider = new Web3.providers.HttpProvider(INFURA_ADDRESS)
@@ -20,7 +20,9 @@ for(let i = 0; i < 101; i++){
   if(!holder[ownerAddress]){
     holder[ownerAddress] = ownerTokens; 
   } else {
-    console.log('<-- Amount of Holders')
+    let lambies = 0;
+    lambies = lambies + 1;
+    console.log('# of lamb holders = ' + lambies);
     holder[ownerAddress]++;
   }
 }
