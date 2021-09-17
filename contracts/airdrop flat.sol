@@ -398,27 +398,25 @@ pragma solidity ^0.8.0;
 
 contract airDropper is Ownable, ERC1155Holder {
 
-    address tokenContractAddress;
     uint16 tokenId;
     IERC1155 currentToken;
     
     function setTokenData(address _contractAddress, uint16 _tokenId) public onlyOwner() {
-        tokenContractAddress = _contractAddress;
         tokenId = _tokenId;
-        currentToken = IERC1155(tokenContractAddress);
+        currentToken = IERC1155(_contractAddress);
     }
 
     function showBalance(address _address) public view {
         currentToken.balanceOf(_address, tokenId);
     }
     
-    function drop(address[] memory dropAddresses, uint dropId) external onlyOwner() {
+    function drop(address[] memory dropAddresses) external onlyOwner() {
         // limit drops to 100
         require(dropAddresses.length < 101, "Dropping to too many addresses");
     
         for(uint256 i; i < dropAddresses.length; i++){
         address _to = dropAddresses[i];
-        currentToken.safeTransferFrom(address(this), _to, dropId, 1, "");
+        currentToken.safeTransferFrom(address(this), _to, tokenId, 1, "");
         }
     }
 } 
