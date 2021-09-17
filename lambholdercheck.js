@@ -13,21 +13,28 @@ console.log('fetching data...')
 const totalSupply = await lambContract.methods.totalSupply().call();
 
 // Step 2 - Iterate over live tokens and log owners
-const holder = {};
-for(let i = 0; i < 101; i++){
+let holder = {};
+for(let i = 0; i < 10; i++){
   const ownerAddress = await lambContract.methods.ownerOf(i).call();
   const ownerTokens = await lambContract.methods.balanceOf(ownerAddress).call();
-  if(!holder[ownerAddress]){
+  
+  if(!holder[ownerAddress]){ 
+    //console.log(holder[ownerAddress]);
     holder[ownerAddress] = ownerTokens; 
+    
   } else {
-    let lambies = 0;
-    lambies = lambies + 1;
-    console.log('# of lamb holders = ' + lambies);
     holder[ownerAddress]++;
+    console.log(holder[ownerAddress]);
   }
-}
 
-console.log('file is ready ;)')
+  /*if (holder[ownerAddress]){
+    Array.push(ownerAddress){
+      key: ownerTokens;
+    }
+  } else {
+    
+  }*/
+}
 
 // Step 3 - Saving the snapshot
 fs.writeFile('holders.json', JSON.stringify(holder, null, 2),{ flag: 'w' },function (err) {
