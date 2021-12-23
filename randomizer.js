@@ -7,7 +7,7 @@ function getRandomInt(max) {
   }
 
 Object.keys(parsedJson).forEach((key) => {
-    fs.appendFile(`./randomizedlist/test${getRandomInt(4)}.json`, `"${key}",\n`, (err) => {
+    fs.appendFile(`./randomizedlist/test${getRandomInt(6)}.json`, `"${key}",\n`, (err) => {
         if (err) {return console.error(err)} 
     }) 
     //console.log(`key: ${key}`)

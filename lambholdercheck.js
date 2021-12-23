@@ -17,14 +17,13 @@ const totalSupply = await lambContract.methods.totalSupply().call();
 
 // Step 2 - Iterate over live tokens and log owners
 let holder = {};
-for(let i = 0; i < 100; i++){
+for(let i = 0; i < totalSupply; i++){
   console.log(i);
   const ownerAddress = await lambContract.methods.ownerOf(i).call();
   const ownerTokens = await lambContract.methods.balanceOf(ownerAddress).call();
 
   if(!holder[ownerAddress]){ 
     holder[ownerAddress] = 1; 
-    
   } 
 }
 
