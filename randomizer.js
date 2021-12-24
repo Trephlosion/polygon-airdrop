@@ -1,5 +1,5 @@
 import fs from 'fs';
-const holderInfo = fs.readFileSync("christmas_nonmixed.json");
+const holderInfo = fs.readFileSync("elvenowners.json");
 const parsedJson = JSON.parse(holderInfo);
 
 function getRandomInt(max) {
@@ -7,7 +7,7 @@ function getRandomInt(max) {
   }
 
 Object.keys(parsedJson).forEach((key) => {
-    fs.appendFile(`./randomizedlist/test${getRandomInt(6)}.json`, `"${key}",\n`, (err) => {
+    fs.appendFile(`./randomizedlist/${getRandomInt(2)}.json`, `"${key}",\n`, (err) => {
         if (err) {return console.error(err)} 
     }) 
     //console.log(`key: ${key}`)

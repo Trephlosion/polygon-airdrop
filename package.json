@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Trephlosion/polygon-airdrop#readme",
   "dependencies": {
     "@openzeppelin/contracts": "^4.3.2",
+    "ethers": "^5.5.2",
     "web3": "^1.5.2"
   }
 }
