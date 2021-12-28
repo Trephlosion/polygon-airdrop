@@ -1,4 +1,7 @@
-require("@nomiclabs/hardhat-waffle");
+//require("@nomiclabs/hardhat-waffle");
+import "@nomiclabs/hardhat-waffle";
+import "@nomiclabs/hardhat-etherscan";
+
 require("@nomiclabs/hardhat-etherscan");
 require('dotenv').config();
 
