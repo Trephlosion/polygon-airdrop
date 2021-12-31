@@ -1,9 +1,7 @@
 //require("@nomiclabs/hardhat-waffle");
 import "@nomiclabs/hardhat-waffle";
 import "@nomiclabs/hardhat-etherscan";
-
-require("@nomiclabs/hardhat-etherscan");
-require('dotenv').config();
+//import "dotenv";
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -27,5 +25,8 @@ module.exports = {
     rinkeby: {
 
     }
+  },
+  paths: {
+    sources: "./round21Events/contracts", 
   }
 };

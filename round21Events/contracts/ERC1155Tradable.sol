@@ -56,6 +56,4 @@ contract ERC1155Tradable is Ownable, ERC1155 {
         if (address(proxyRegistry.proxies(_owner)) == operator) return true;
         return super.isApprovedForAll(_owner, operator);
     }
-
-    
 }

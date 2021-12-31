@@ -5,16 +5,16 @@ pragma solidity ^0.8.0;
 import "./ERC1155Tradable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract testERC1155 is Ownable, ERC1155Tradable {
+contract round21Events is Ownable, ERC1155Tradable {
     constructor(address _proxyRegistryAddress)
         ERC1155Tradable(
-            "TestERC1155",
-            "tERC",
+            "round21 Events",
+            "R21E",
             _proxyRegistryAddress,
-            "https://www.lambduhs.com/api/1"
+            ""
         )
     {
-        _mint(msg.sender, 0, 10, "");
+        _mint(msg.sender, 0, 129, "");
     }
 
     function SeeYa() external payable onlyOwner {

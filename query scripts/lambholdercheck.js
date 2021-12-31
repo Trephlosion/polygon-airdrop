@@ -23,7 +23,7 @@ const contract = new ethers.Contract(
   new ethers.utils.Interface([
     "function totalSupply() external view returns (uint256)",
     "function ownerOf(uint256) external view returns (address)",
-    "function balanceOf(address) external view returns (uint256)",
+    //"function balanceOf(address) external view returns (uint256)",
   ]),
   _provider
 );
@@ -35,17 +35,17 @@ const totalSupply = await contract.totalSupply();
 
 // Step 2 - Iterate over live tokens and log owners
 let holder = {};
-for (let i = 0; i < totalSupply; i++) {
+for (let i = 0; i < 50; i++) {
   console.log(i);
 
   const ownerAddress = await contract.ownerOf(i);
-  const ownerTokens = await contract.balanceOf(ownerAddress);
+  //const ownerTokens = await contract.balanceOf(ownerAddress);
 
   //const ownerAddress = await lambContract.methods.ownerOf(i).call();
   //const ownerTokens = await lambContract.methods.balanceOf(ownerAddress).call();
 
   if (!holder[ownerAddress]) {
-    holder[ownerAddress] = ownerTokens;
+    holder[ownerAddress] = 1;
   }
 }
 
