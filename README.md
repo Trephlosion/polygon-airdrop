@@ -11,4 +11,4 @@ This project provides the methods query NFT collection holders, make an ERC1155 
 `query scripts` contains 3 files:
 - `config.js` to set your API endpoint, contract address, and contract ABI
 - `holderquery.js` to query all holders and write the data to `test.json`
-- `randomizer.js`(./query scripts/randomizer.js) *(OPTIONAL)* takes all owner addresses from `test.json` and randomly splits them to other  `.json` files under `randomizedlist`
+- `randomizer.js`(./query scripts/randomizer.js) *(OPTIONAL)* takes all owner addresses from `test.json` and randomly splits them to other json files under `randomizedlist`
