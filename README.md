@@ -1,4 +1,4 @@
-# Polygon Airdropper
+# Polygon Airdropper ✈️
 
 This project provides the methods query NFT collection holders, make an ERC1155 token, and airdrop them out to the holders at high speed ⚡
 
