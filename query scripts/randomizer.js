@@ -1,5 +1,5 @@
 import fs from 'fs';
-const holderInfo = fs.readFileSync("elvenowners.json");
+const holderInfo = fs.readFileSync("test.json");
 const parsedJson = JSON.parse(holderInfo);
 
 function getRandomInt(max) {
