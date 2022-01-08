@@ -1,15 +1,11 @@
-# Basic Sample Hardhat Project
+# Polygon Airdropper
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This project provides the methods query NFT collection holders, make an ERC1155 token, and airdrop them out to the holders at high speed ⚡
 
-Try running some of the following tasks:
+### Repo Tour:
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+[`contracts`](./contracts) contains the flat airdropper code that you can copy and paste into Remix to deploy.
+[`query scripts`](./query scripts) contains 3 files:
+- [`config.js`](./query scripts/config.js) to set your API endpoint, contract address, and contract ABI
+- [`holderquery.js`](./query scripts/holderquery.js) to query all holders and write the data to `test.json`
+- [`randomizer.js`](./query scripts/randomizer.js) *(OPTIONAL)* takes all owner addresses from `test.json` and randomly splits them to other  `.json` files under `randomizedlist`
